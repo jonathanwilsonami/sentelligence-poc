@@ -15,7 +15,7 @@ Architecture
 =============
 Basic overview of how it works.
 
-.. image:: docs/arch.png
+.. image:: ./docs/arch.png
    :width: 600
 
 Developer Env Setup
