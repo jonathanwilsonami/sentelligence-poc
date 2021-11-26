@@ -1,2 +1,17 @@
 ---
-- host: webserver
+- name: Setup webapp
+  hosts: localhost
+
+  tasks:
+    - name: "Update packages"
+      yum: 
+        update_cache: yes
+
+    - name: "Install base packages for web app"
+      become: true
+      yum: 
+        name:
+          - npm
+          - nodejs
+        state: present
+      tags: packages

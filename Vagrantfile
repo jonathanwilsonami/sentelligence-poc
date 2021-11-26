@@ -1,13 +1,16 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "centos/7"
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  # Why Rocky Linux 8? Rocky Linux is a direct clone of Linux Enterprise 8 so it follows the Enterprise 8 product. Centos and Fedora are
+  # development products now. This is a good distro to use for now as it gives a good reprsentation of Linux Enterprise 8 (RHEL). In the 
+  # future if the project grows and gets bigger we may switch to RHEL but for now Rock Linux is great.  
+  config.vm.box = "rockylinux/8"
+  config.vm.box_version = "4.0.0"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -25,11 +28,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "default", primary: true do |default|
 
-    #config.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
-
     default.vm.hostname = "sentel"
+    #For testing the web
     default.vm.network :private_network, ip: "192.168.50.100"
-
+    #config.vm.network :forwarded_port, guest: 80, host: 8080
+    
     # Run Provisioning for default
     default.vm.provision "shell", inline: install_packages, privileged: true
 
