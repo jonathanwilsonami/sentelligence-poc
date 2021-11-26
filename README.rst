@@ -15,8 +15,7 @@ Architecture
 =============
 Basic overview of how it works.
 
-.. image:: ./docs/arch.png
-   :width: 600
+.. image:: https://github.com/jonwilami323/sentelligence-poc/blob/develop/docs/arch.PNG
 
 Developer Env Setup
 ====================
