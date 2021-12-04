@@ -31,7 +31,7 @@ Ex: /Documents/Projects/sentelligence.
 3. Install the latest versions of VirtualBox (https://www.virtualbox.org/wiki/Downloads) and Vagrant (https://www.vagrantup.com/). Once these are installed go to your project 
 directory and run 'vagrant --version' to make sure you have vagrant installed. Then install the Guest Additions by running 'vagrant plugin install vagrant-vbguest --plugin-version 0.21'. 
 You might be fine with just 'vagrant plugin install vagrant-vbguest' on a MAC using version 0.21 was to address a Windows bug. This plugin for VirtualBox allows you to do many things as a developer most importantly it allows you to 
-sync your code changes with your VM. ****If you have a Windows machine you will also need to run "vagrant plugin install vagrant-winnfsd".**** Lastly, for both Windows and Mac there is a security 
+sync your code changes with your VM. Lastly, for both Windows and Mac there is a security 
 setting you need to address first. For Mac Google "VirtualBox Problems on macOS (Security & Access)". Follow these instructions. After this step you should not have to do this again unless 
 you need to uninstall your VirtualBox.      
 
