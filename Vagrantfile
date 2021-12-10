@@ -29,7 +29,10 @@ Vagrant.configure("2") do |config|
 
     default.vm.hostname = "sentel"
 
+    # Static IP
     default.vm.network :private_network, ip: "192.168.50.100"
+    # Port Forward
+    # config.vm.forward_port 80, 8080
     
     default.vm.provision "shell", inline: "chmod +x /vagrant/vagrant/provision.sh"
     default.vm.provision "shell", inline: install_packages, privileged: true

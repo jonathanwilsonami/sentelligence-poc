@@ -1,0 +1,28 @@
+---
+- name: Deploy sentel
+  hosts: webapp
+  vars:
+    # user: "{{ ansible_ssh_user }}"
+    proj_name: "{{ proj_name }}"
+    # proj_dirname: project
+    # reqs_path: requirements.txt
+    repo_url: https://github.com/jonwilami323/sentelligence-poc.git
+  tasks:
+    - name: install packages
+      become: true
+      yum: pkg={{ item }} update_cache=yes cache_valid_time=3600
+      sudo: True
+      with_items:
+        - git
+        - tree
+        - dos2unix 
+        - unix2dos 
+        - unzip 
+        - zip 
+        - wget
+        - postgresql
+        - python-dev
+        - python-pip
+        - python-psycopg2
+        - python-setuptools
+        - python-virtualenv

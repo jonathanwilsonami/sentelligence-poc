@@ -1,17 +1,33 @@
 ---
 - name: Setup webapp
   hosts: localhost
+  vars: 
+    web_path: /vagrant/web
 
   tasks:
     - name: "Update packages"
       yum: 
         update_cache: yes
 
-    - name: "Install base packages for web app"
+    - name: "Remove node_modules if it exists already"
+      file:
+        path: "{{ web_path }}/node_modules"
+        state: absent
+
+    - name: "Install Nodejs and npm"
       become: true
       yum: 
         name:
+          - git
+          - curl
+          - wget
+          - nginx
           - npm
           - nodejs
         state: present
-      tags: packages
+      tags: web packages
+
+    - name: "Install packages based on package.json"
+      npm: 
+        path: "{{ web_path }}"
+        state: present

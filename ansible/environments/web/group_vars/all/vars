@@ -1,1 +1,4 @@
 ---
+proj_name: sentelligence-poc
+locale: en_US.UTF-8
+database_port: ???

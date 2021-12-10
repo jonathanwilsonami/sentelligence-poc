@@ -1,4 +1,15 @@
-#Vagrant 
+# nodejs
+node_modules
+build
+npm-debug.log
+.nyc
+.env
+.DS_Store
+
+# Ansible
+secrets.yml
+
+# Vagrant 
 .vagrant/
 
 # IDE

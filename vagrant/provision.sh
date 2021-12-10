@@ -3,8 +3,6 @@
 # RPEL
 yum -y update
 yum -y install epel-release
-yum -y repolist
-yum -y update kernel
 
 # Vim editor
 PKGS="$PKGS vim-enhanced"

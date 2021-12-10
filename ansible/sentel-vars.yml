@@ -1,0 +1,7 @@
+---
+- name: Deploy web app on vagrant
+  hosts: app
+  vars:
+    # This file is not on the git repo. Evetually we need to use ansible-vault. 
+  vars_files:
+    - secrets.yml
